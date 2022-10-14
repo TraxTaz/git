@@ -1,0 +1,72 @@
+.topnav{
+    overflow: hidden;
+    background-color: #EE4400;
+    padding: 18px 36px;
+    
+}
+.topnav a{
+    color: #f2f2f2;
+    text-align: center;
+    justify-content: center;
+    padding-right: 150px;
+}
+body{
+    background-image: url('/static/view-leaning-tower-pisa-background-blue-sky_274719-6850.png');
+    margin: 0px;
+}
+.text{
+    font-size: 250%;
+    text-align: center;
+    position: relative;
+    top: 25px;
+}
+.img{
+    float: left;
+    width: 2px;
+    height:100px;
+    position: relative;
+    right: 60px;
+    bottom: 30px;
+    padding-right: 200px;
+}
+.p{
+    font-size: 500%;
+    font-family: 'Inter';
+    color: #EE4400;
+    position: absolute;
+    top: 130px;
+    left: 200px;
+    text-shadow: 1px 2px;
+}
+.position{
+    position: relative;
+    left: 40px;
+    bottom: 70px;
+}
+.position1{
+    position: relative;
+    left: 130px;
+    bottom: 150px;
+}
+.eat{
+    position: relative;
+    bottom: 200px;
+    left: 200px;
+}
+.map{
+    width: 500px;
+    height: 450px;
+    border: 0;
+    display: flex;
+    position: relative;
+    top: 100px;
+    left: 300px;
+}
+.p1{
+    color: #EE4400;
+    font-size: 280%;
+    font-family: 'inter';
+    position: relative;
+    top: 100px;
+    left: 70px;
+}
