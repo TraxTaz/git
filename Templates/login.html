@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name = "login-page" content = "username-and-password">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mario and Luigi's Pizzareia</title>
+    </head>
+    <body>
+        <h2>Login</h2>
+
+        <form action="/login" method="post">
+            <label>Username:</label><br>
+            <input type="text" name="username"><br><br>
+            
+            <label>Password:</label><br>
+            <input type="text" name="userage"><br><br><br>
+
+            <input type="submit" value="Login"></input>
+            
+        </form>
+        {% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+         {{ message }}
+      {% endfor %}
+   {% endif %}
+{% endwith %}
+    </body>
+</html>
