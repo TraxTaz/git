@@ -11,20 +11,21 @@
 
         <form action="/login" method="post">
             <label>Username:</label><br>
-            <input type="text" name="username"><br><br>
+            <input type="text" name="username" required><br><br>
             
             <label>Password:</label><br>
-            <input type="text" name="userage"><br><br><br>
+            <input type="text" name="userpass" required><br><br><br>
 
-            <input type="submit" value="Login"></input>
-            
+            <input type="submit" value="Login"></input> 
         </form>
+        <p>Don't have an account?</p>
+        <a href = "register.html">Register</a><br/>
         {% with messages = get_flashed_messages() %}
-   {% if messages %}
-      {% for message in messages %}
-         {{ message }}
-      {% endfor %}
-   {% endif %}
-{% endwith %}
+        {% if messages %}
+           {% for message in messages %}
+              {{ message }}
+           {% endfor %}
+        {% endif %}
+        {% endwith %}
     </body>
 </html>

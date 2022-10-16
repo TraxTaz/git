@@ -3,18 +3,28 @@
 
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta name = "login-page" content = "username-and-password">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Mario and Luigi's pizzareia</title>
     </head>
     <body>
         <h2>Register</h2>
-        <form action = "/regis", method = "post">
-            <label>Username:</label>
-            <input type ="text" name = "user_name">
+        <form action = "/page", method = "post">
+            <label>Username:</label><br/>
+            <input type ="text" name = "user_name" required><br/><br/>
 
-            <label>Password:</label>
-            <input type = "text" name = "user_pass">
+            <label>Password:</label><br/>
+            <input type = "text" name = "user_pass" required><br/><br/>
 
-            <input type = "submit" value = "Register">
+            <input type = "submit" value = "Register"><br/>
         </form>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+           {% for message in messages %}
+              {{ message }}
+           {% endfor %}
+        {% endif %}
+        {% endwith %}
     </body>
-</html>
+</html> 
