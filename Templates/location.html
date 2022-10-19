@@ -2,11 +2,38 @@
 
 <html>
     <head>
-
+        <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/style.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />   
+        <meta name = "main-page" contect = "Home page">
     </head>
     <body>
-        <div class = "map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.4506286890773!2d5.4910923159589045!3d51.4498823227277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6d8ddf9c2cb9d%3A0x6776b2f3fcd9bf3e!2sFontys%20University%20of%20Applied%20Sciences!5e0!3m2!1sen!2snl!4v1665593091714!5m2!1sen!2snl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class = "topnav">
+            <div class = "img">
+                <img src = "{{url_for('static', filename='mario.png')}}">
+            </div>
+
+            <div class = "text">
+                <a href ="/">Main</a>
+                <a href ="/location">Location</a>
+                <a href ="/aboutus">About us</a>
+                <a href ="/menu">Menu</a>
+                <a href ="/language">Dutch</a>
+                <a href ="/userlogin">Login</a> 
+            </div>
         </div>
+            
+            <div class = "p2"> <b>
+            <p> We are  located In Eindhoven, it is our only location so far.<br/>
+                If we open more restaurants in different locations you can see it here!<br/>
+                click this link to get your route to our restaurant!<br/><br/>
+                <a href = "https://goo.gl/maps/xz3GtJ5byaG6ACy78">https://goo.gl/maps/xz3GtJ5byaG6ACy78</a>     
+            </p>
+            </b>
+            </div>
+            <div class = "map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.4506286890773!2d5.4910923159589045!3d51.4498823227277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6d8ddf9c2cb9d%3A0x6776b2f3fcd9bf3e!2sFontys%20University%20of%20Applied%20Sciences!5e0!3m2!1sen!2snl!4v1665593091714!5m2!1sen!2snl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><br/>
+            
+        </div>
+        
     </body>
 </html>

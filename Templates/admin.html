@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name = "main-page" contect = "Home page">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+        <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/style.css') }}">
+        <title>Mario and Luigi's Pizzareia</title>
+    </head>
+    <body>
+        <div class = "topnav3">
+        <div class = "img">
+            <img src = "{{url_for('static', filename='mario.png')}}">
+        </div>
+        <div class = "text">
+            <a href = "/ovenstatus">Oven Status</a>
+            <a href = "/orderhistory">Order history</a>
+            <a href ="/">Sign out</a> 
+        </div>
+        </div>
+    </body>
+</html>

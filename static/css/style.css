@@ -1,14 +1,30 @@
-.topnav{
+.topnav, .topnav2, .topnav3{
     overflow: hidden;
     background-color: #EE4400;
     padding: 18px 36px;
     
 }
-.topnav a{
+.topnav4{
+    overflow: hidden;
+    background-color: #22B24C;
+    padding: 18px 36px;
+}
+.topnav a, .topnav2 a, .topnav3 a, .topnav4 a{
     color: #f2f2f2;
     text-align: center;
     justify-content: center;
-    padding-right: 150px;
+}
+.topnav a{
+    padding-right: 145px;
+}
+.topnav2 a{
+    padding-right: 55px;
+}
+.topnav3 a{
+    padding-right: 190px;
+}
+.topnav4 a{
+    padding-right: 145px;
 }
 body{
     background-image: url('/static/view-leaning-tower-pisa-background-blue-sky_274719-6850.png');
@@ -59,14 +75,71 @@ body{
     border: 0;
     display: flex;
     position: relative;
-    top: 100px;
-    left: 300px;
+    top: 50px;
+    left: 670px;
 }
 .p1{
     color: #EE4400;
-    font-size: 280%;
+    font-size: 150%;
     font-family: 'inter';
     position: relative;
     top: 100px;
-    left: 70px;
+    left: 0px;
+}
+span{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.p2{
+    font-size: 140%;
+    font-family: 'Inter';
+    color:#EE4400;
+    position: relative;
+    top: 250px;
+    left: 10px;
+}
+.loginreg{
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    top: 20px;
+}
+.oval{
+    width: 20%;
+    height: 300px;
+    border-radius: 10px;
+    margin: auto;
+    background-color: #EE4400;
+    box-shadow: 5px 10px;
+    position: relative;
+    top: 200px;
+    right: 330px;
+}
+.button{
+    background-color: #EE4400;
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.back, .back1{
+    background-color: rgb(240, 235, 235);
+    color: black;
+    border: 2px solid #22B24C;
+}
+.back:hover, .back1:hover{
+    background-color: #22B24C;
+}
+.back1:hover{
+    background-color: #22B24C;
+}
+.back1{
+    position: relative;
+    left: 160px;
+    bottom: 28px;
 }

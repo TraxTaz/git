@@ -4,28 +4,40 @@
         <meta charset="utf-8">
         <meta name = "login-page" content = "username-and-password">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel ="stylesheet" href = "{{ url_for('static', filename = 'css/style.css') }}">
         <title>Mario and Luigi's Pizzareia</title>
     </head>
     <body>
+        <div class = "oval">
+        <div class = "loginreg">
         <h2>Login</h2>
-
         <form action="/login" method="post">
             <label>Username:</label><br>
             <input type="text" name="username" required><br><br>
             
             <label>Password:</label><br>
-            <input type="text" name="userpass" required><br><br><br>
-
-            <input type="submit" value="Login"></input> 
+            <input type="password" name="userpass" required><br/><br/>
+            
+   
+            <input type="submit" value="Login"></input><br/>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+               {% for message in messages %}
+                  {{ message }}
+               {% endfor %}
+            {% endif %}
+            {% endwith %}
         </form>
+    
         <p>Don't have an account?</p>
-        <a href = "register.html">Register</a><br/>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-           {% for message in messages %}
-              {{ message }}
-           {% endfor %}
-        {% endif %}
-        {% endwith %}
+        <a href = "register.html">
+        <button class = "button back">Register</button><br/>
+    </a>
+    <a href = "/">
+        <button class ="button back1" href = "/">Back</button>
+    </a>
+    </div>
+</div>
+</div>
     </body>
 </html>

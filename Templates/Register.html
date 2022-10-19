@@ -6,16 +6,19 @@
         <meta charset="utf-8">
         <meta name = "login-page" content = "username-and-password">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/style.css') }}">
         <title>Mario and Luigi's pizzareia</title>
     </head>
     <body>
+        <div class = "oval">
+            <div class = "loginreg">
         <h2>Register</h2>
         <form action = "/page", method = "post">
             <label>Username:</label><br/>
             <input type ="text" name = "user_name" required><br/><br/>
 
             <label>Password:</label><br/>
-            <input type = "text" name = "user_pass" required><br/><br/>
+            <input type = "password" name = "user_pass" required><br/><br/>
 
             <input type = "submit" value = "Register"><br/>
         </form>
@@ -26,5 +29,11 @@
            {% endfor %}
         {% endif %}
         {% endwith %}
+        <p>Already have an account?</p>
+        <a href = "/userlogin">
+        <button class = "button back">Login</button>
+        </a>
+    </div>
+</div>
     </body>
 </html> 
