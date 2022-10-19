@@ -74,6 +74,23 @@ body{
     left: 130px;
     top: 170;
 }
+.h, .h2{
+    color: #EE4400;
+    font-size: 150%;
+    font-family: 'inter';
+}
+.h{
+    position: relative;
+    top: 120px;
+    left: 30px;
+}
+.hmario{
+    font-size: 190%;
+    color: blue;
+    position: relative;
+    top: 100px;
+    left: 200px;
+}
 .p{
     font-size: 500%;
     font-family: 'Inter';
@@ -141,25 +158,8 @@ body{
     bottom: 250px
 }
 
-.h, .h2{
-    color: #EE4400;
-    font-size: 150%;
-    font-family: 'inter';
-}
-.h{
-    position: relative;
-    top: 120px;
-    left: 30px;
-}
 span{
     font-family: Arial, Helvetica, sans-serif;
-}
-.hmario{
-    font-size: 190%;
-    color: purple;
-    position: relative;
-    top: 100px;
-    left: 200px;
 }
 .loginreg{
     text-align: center;
