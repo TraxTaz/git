@@ -1,15 +1,21 @@
-.topnav, .topnav2, .topnav3{
+.topnav, .topnav2, .topnav3, .topnav4, .topnav5{
     overflow: hidden;
-    background-color: #EE4400;
     padding: 18px 36px;
     
 }
-.topnav4{
-    overflow: hidden;
-    background-color: #22B24C;
-    padding: 18px 36px;
+.topnav, .topnav2{
+    background-color: #EE4400;
 }
-.topnav a, .topnav2 a, .topnav3 a, .topnav4 a{
+.topnav3{
+    background-color: purple;
+}
+.topnav4{
+    background-color: #22B24C;
+}
+.topnav5{
+    background-color:blue;
+}
+.topnav a, .topnav2 a, .topnav3 a, .topnav4 a, .topnav5 a{
     color: #f2f2f2;
     text-align: center;
     justify-content: center;
@@ -24,6 +30,9 @@
     padding-right: 190px;
 }
 .topnav4 a{
+    padding-right: 145px;
+}
+.topnav5 a{
     padding-right: 145px;
 }
 body{
@@ -45,6 +54,26 @@ body{
     bottom: 30px;
     padding-right: 200px;
 }
+.aboutusimg{
+    position: relative;
+    bottom: 470px;
+    left: 1200px;
+}
+.aboutusimg2{
+    position: relative;
+    bottom: 460px;
+    left: 1160px;
+}
+.pizza{
+    position: relative;
+    left: 130px;
+    top: 70px;
+}
+.pizza1{
+    position: relative;
+    left: 130px;
+    top: 170;
+}
 .p{
     font-size: 500%;
     font-family: 'Inter';
@@ -53,6 +82,41 @@ body{
     top: 130px;
     left: 200px;
     text-shadow: 1px 2px;
+}
+.p1{
+    color: #EE4400;
+    font-size: 150%;
+    font-family: 'inter';
+    position: relative;
+    top: 100px;
+    left: 15px;
+}
+.p2{
+    font-size: 140%;
+    font-family: 'Inter';
+    color:#EE4400;
+    position: relative;
+    top: 130px;
+    left: 30px;
+}
+.p3, .p4{
+    font-size: 16px;
+    font-family: 'Italic';
+    color: #3E3A3A transparent;
+    position: relative;
+    bottom: 150px;
+    left: 333px;
+}
+.p4{
+    position: relative;
+    bottom: 220px;
+    left: 333px;
+}
+.pmario{
+    font-size: 120%;
+    position: relative;
+    left: 80px;
+    bottom: 30px;
 }
 .position{
     position: relative;
@@ -70,32 +134,32 @@ body{
     left: 200px;
 }
 .map{
-    width: 500px;
-    height: 450px;
     border: 0;
     display: flex;
     position: relative;
-    top: 50px;
-    left: 670px;
+    left: 770px;
+    bottom: 250px
 }
-.p1{
+
+.h, .h2{
     color: #EE4400;
     font-size: 150%;
     font-family: 'inter';
+}
+.h{
     position: relative;
-    top: 100px;
-    left: 0px;
+    top: 120px;
+    left: 30px;
 }
 span{
     font-family: Arial, Helvetica, sans-serif;
 }
-.p2{
-    font-size: 140%;
-    font-family: 'Inter';
-    color:#EE4400;
+.hmario{
+    font-size: 190%;
+    color: purple;
     position: relative;
-    top: 250px;
-    left: 10px;
+    top: 100px;
+    left: 200px;
 }
 .loginreg{
     text-align: center;

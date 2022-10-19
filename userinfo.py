@@ -2,7 +2,6 @@ from flask import Flask, render_template, redirect, request, flash
 import csv, random
 from statistics import *
 
-
 user_names = []
 user_passwords = []
 admins =["mario", "luigi"]
@@ -34,15 +33,7 @@ with open('Sold.csv', 'r', newline="") as filevar:
 
 app = Flask(__name__)
 app.secret_key = b'balls'
-
-@app.route('/')
-def homepage():
-    return render_template('homepage.html')
-
-@app.route('/userlogin')
-def init():
-    return render_template('login.html')
-
+#--------------------login-------------------------
 @app.route('/login', methods = ['POST'])
 def user_login():
     global userinfo
@@ -55,9 +46,11 @@ def user_login():
     for index in range(0, len(user_names)):
         if username == user_names[index]:
             if userpass == user_passwords[index]:
-                if "admin" == user_names[index]:
-                    return render_template('admin.html')
-                return render_template('main.html')            
+                if "Luigi" == user_names[index]:
+                    return render_template('cook.html', username = username)
+                if "Mario" == user_names[index]:
+                    return render_template('cashier.html', username = username)
+                return render_template('main.html', username = username)            
     else:
         flash ("Either username or password is incorrect")
         return redirect ('/userlogin')
@@ -90,8 +83,8 @@ def register():
             writer.writerow(info)
             user_names.append(user_name)
             user_passwords.append(user_pass)
-
-    return redirect ('/mainn')
+    
+    return redirect ('/userlogin')
 #-------------------------pages--------------------------
 @app.route('/location')
 def location():
@@ -104,6 +97,7 @@ def aboutus():
 @app.route('/out')
 def signout():
     return render_template('aboutusold.html')
+
 @app.route('/out2')
 def signout2():
     return render_template('locationold.html')
@@ -119,10 +113,18 @@ def ohistory():
 @app.route('/ovenstatus')
 def ovenstatus():
     return render_template('ovenstatus.html')
-    
+
 @app.route('/menu')
 def menu():
     return render_template('menu.html')
+
+@app.route('/')
+def homepage():
+    return render_template('homepage.html')
+
+@app.route('/userlogin')
+def init():
+    return render_template('login.html')
 #--------------------ordering system---------------------
 @app.route("/buy")
 def buy():
