@@ -2,6 +2,8 @@ from flask import Flask, render_template, redirect, request, flash
 import csv, random
 from statistics import *
 
+Temp = 0
+Time = 0
 user_names = []
 user_passwords = []
 admins =["mario", "luigi"]
@@ -12,7 +14,6 @@ pm =[]
 pma =[]
 pbbq =[]
 ordernumber =[]
-
 #--------------Login---------------
 with open('login.csv', 'r') as filevar:
     reader = csv.reader(filevar)
@@ -108,11 +109,15 @@ def mains():
 
 @app.route('/orderhistory')
 def ohistory():
-    return render_template('orderhistory.html')
+    return render_template('orderhistory.html', ordernumber = ordernumber, pp = pp, pc = pc, pv = pv, pma = pma)
 
 @app.route('/ovenstatus')
 def ovenstatus():
-    return render_template('ovenstatus.html')
+    return render_template('ovenstatus.html', Time = Time, Temp = Temp)
+
+@app.route('/current')
+def currentorders():
+    return render_template('currentorders.html  ')
 
 @app.route('/menu')
 def menu():
@@ -125,10 +130,19 @@ def homepage():
 @app.route('/userlogin')
 def init():
     return render_template('login.html')
+
+#--------------------arduino data------------------------
+@app.route('/test', methods = ["POST"])
+def send():
+    global Time, Temp
+    stats = request.get_json()
+    Time = stats['time']
+    Temp = stats['temp']
+    return redirect('/ovenstatus')
 #--------------------ordering system---------------------
 @app.route("/buy")
 def buy():
-    return render_template('buying.html')
+    return render_template('menu.html')
 
 @app.route("/bought", methods=["POST"])
 def bought():
@@ -143,9 +157,25 @@ def bought():
     Data = (pp, pc, pv, pm, pma, pbbq, ordernumber)
       
     with open('Sold.csv', 'a+', newline="") as textfile:
-     writer = csv.writer(textfile, skipinitialspace=False)
-     writer.writerow(Data)
-
+        writer = csv.writer(textfile, skipinitialspace=False)
+        writer.writerow(Data)
+    pp = []
+    pc = []
+    pv =[]
+    pm =[]
+    pma =[]
+    pbbq =[]
+    ordernumber =[]
+    with open('Sold.csv', 'r', newline="") as filevar:
+     reader = csv.reader(filevar)
+     for row in reader:
+        pp.append(float(row[0]))
+        pc.append(float(row[1]))
+        pv.append(float(row[2]))
+        pm.append(float(row[3]))
+        pma.append(float(row[4]))
+        pbbq.append(float(row[5]))
+        ordernumber.append(float(row[6]))
     return render_template('paying.html',
                         pp = int(pp[-1]),
                         pc = int(pc[-1]),
@@ -154,16 +184,12 @@ def bought():
                         pma = int(pma[-1]),
                         pbbq = int(pbbq[-1]),
                         ordernumber = int(ordernumber[-1]),
-                        totalpp = (pp[-1] * 7.50),
-                        totalpc = (pp[-1] * 7.25),
-                        totalpv = (pp[-1] * 8),
-                        totalpm = (pp[-1] * 8),
-                        totalpma = (pp[-1] * 8),
-                        totalpbbq = (pp[-1] * 8),
-                        total = (pp[-1] * 7.50) + (pc[-1] * 7.25) + (pv[-1] * 8) + (pm[-1] * 8) + (pma[-1] * 8) + (pbbq[-1] * 8))
-    
+                        total = (pp[-1] * 7.99) + (pc[-1] * 8.99) + (pv[-1] * 8) + (pm[-1] * 8) + (pma[-1] * 8) + (pbbq[-1] * 8)
+                        )
+   
 @app.route("/paid")
 def paid():
     return render_template('paid.html',
-                            ordernumber = int(ordernumber[-1]),
-                            total = (pp[-1] * 7.50) + (pc[-1] * 7.25) + (pv[-1] * 8) + (pm[-1] * 8) + (pma[-1] * 8) + (pbbq[-1] * 8),)
+    ordernumber = int(ordernumber[-1]),
+    total = (pp[-1] * 7.99) + (pc[-1] * 8.99) + (pv[-1] * 8) + (pm[-1] * 8) + (pma[-1] * 8) + (pbbq[-1] * 8)
+)
