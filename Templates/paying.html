@@ -10,16 +10,16 @@
         {% if pp == 0 %}
         <p></p>
         {% else %}
-        <br>            {{ pp }} Pizza Pepperoni
-        <img style="width:100px; height:100px" src="https://images.newyorkpizza.nl/Products/Original/double_Pepperoni-8056.png">
-        <p>Price: €{{totalpp}}</p>
+        <br>{{ pp }} Margherita
+        <img style="width:100px; height:100px" src="{{url_for('static', filename='pizzamargherita.jpg')}}">
+        <p>Price: €7.99{{totalpp}}</p>
         {% endif %}
         {% if pc == 0 %}
         <p></p>
         {% else %}
-        <br>     {{ pc }} Pizza cheese
-        <img style="width:100px; height:100px" src="https://images.newyorkpizza.nl/Products/Original/5_cheese-8064.png">
-        <p>Price: €{{totalpc}} </p>
+        <br>{{ pc }} Napolitana
+        <img style="width:100px; height:100px" src="{{url_for('static', filename='napolitan.jpg')}}">
+        <p>Price: €8.99{{totalpc}} </p>
         {% endif %}
         {% if pv == 0 %}
         <p></p>

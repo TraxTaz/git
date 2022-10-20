@@ -36,7 +36,8 @@
     padding-right: 145px;
 }
 body{
-    background-image: url('/static/view-leaning-tower-pisa-background-blue-sky_274719-6850.png');
+    background-image: url('/static/view-leaning-tower-pisa-background-blue-sky_274719-6850.png') ;
+    background-size: cover;
     margin: 0px;
 }
 .text{
@@ -121,12 +122,12 @@ body{
     font-family: 'Italic';
     color: #3E3A3A transparent;
     position: relative;
-    bottom: 150px;
+    bottom: 140px;
     left: 333px;
 }
 .p4{
     position: relative;
-    bottom: 220px;
+    bottom: 210px;
     left: 333px;
 }
 .pmario{

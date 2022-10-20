@@ -1,74 +1,58 @@
-<head>
-    <link rel="stylesheet" type="text/css" href="static/style.css">
-    <title>Pizza shopping</title>
-    <style>
-    .form-payroll{
-     border: solid 1px #000; 
-     width: 31%;
-     padding: 25px
-    }
+<!DOCTYPE html>
+<html>
 
-    .form-input{
-     width:5%;
-    }
 
-    h1{
-     text-align:center;
-    }
-    
-    .btn-submit{
-        float:right;
-    }
-    </style>
-</head>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="static/style.css">
+        <title>Pizza shopping</title>
+        <style>
+        .form-payroll{
+        border: solid 1px #000; 
+        width: 31%;
+        padding: 25px
+        }
+        .form-input{
+        width:5%;
+        }
+        h1{
+        text-align:center;
+        }
+        .btn-submit{
+            float:right;
+        }
+        </style>
+    </head>
 
 <body>
- <form class="form-payroll" method="POST" action="/bought">
- <h1>Buy delicious Pizza</h1>
+    <form class="form-payroll" method="POST" action="/bought">
+    <h1>Buy delicious Pizza</h1>
 
- <img style="width:100px; height:100px" src="https://images.newyorkpizza.nl/Products/Original/double_Pepperoni-8056.png">
- <p>Pizza Pepperoni       
- <br>add to cart
- <b><input class="form-input" type="text" name="PP" placeholder="" value=0 required></b>
- <br> €7,50 
- </p>
+    <p>
+    <b><input class="form-input" type="text" name="PP" placeholder="" value=0 required></b> 
+    </p>
 
- <img style="width:100px; height:100px" src="https://images.newyorkpizza.nl/Products/Original/5_cheese-8064.png">
- <p>Pizza Cheese
- <br>add to cart
- <b><input class="form-input" type="text" name="PC" placeholder="" value="0" required></b>
- <br> €7,25
- </p>
 
- <img style="width:100px; height: 100 px" src="https://images.newyorkpizza.nl/Products/Original/vegan_Californian-8071.png">
- <p>Pizza Veggie
- <br>add to cart
- <b><input class="form-input" type="text" name="PV" placeholder="" value="0" required></b>
- <br> €8,00
- </p>
+    <b><input class="form-input" type="text" name="PC" placeholder="" value="0" required></b>
 
- <img style="width:100px; height: 100 px" src="https://images.newyorkpizza.nl/Products/Original/BBQ_meatlovers-8053.png">
- <p>Pizza Meat
- <br>add to cart
- <b><input class="form-input" type="text" name="PM" placeholder="" value="0" required></b>
- <br> €8,00
- </p>
+    <p>
+    <b><input class="form-input" type="text" name="PV" placeholder="" value="0" required></b>
+    </p>
 
- <img style="width:100px; height: 100 px" src="https://images.newyorkpizza.nl/Products/Original/Margherita-8046.png">
- <p>Pizza Margherita
- <br>add to cart
- <b><input class="form-input" type="text" name="PMA" placeholder="" value="0" required></b>
- <br> €8,00
- </p>
+    <p>
+    <b><input class="form-input" type="text" name="PM" placeholder="" value="0" required></b>
+    </p>
 
- <img style="width:100px; height: 100 px" src="https://images.newyorkpizza.nl/Products/Original/BBQ_Chicken-8066.png">
- <p>Pizza BBQ chicken
- <br>add to cart
- <b><input class="form-input" type="text" name="PBBQ" placeholder="" value="0" required></b>
- <br> €8,00
- </p>
+    <p>
+    <b><input class="form-input" type="text" name="PMA" placeholder="" value="0" required></b>
+    </p>
 
- <button class="btn-submit">go to cart</button>
- </form>
+    <p>
+    <b><input class="form-input" type="text" name="PBBQ" placeholder="" value="0" required></b>
+    </p>
+
+    <button class="btn-submit">go to cart</button>
+    </form>
 </body>
 
+</html>

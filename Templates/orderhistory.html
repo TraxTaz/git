@@ -3,21 +3,32 @@
     <head>
         <meta name = "main-page" contect = "Home page">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+        <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/style2.css') }}">
         <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/style.css') }}">
         <title>Mario and Luigi's Pizzareia</title>
     </head>
-    <body>
+    <body scroll = "no">
         <div class = "topnav5">
             <div class = "img">
                 <img src = "{{url_for('static', filename='mario.png')}}">
             </div>
             <div class = "text">
                 <a href ="/orderhistory">Order History</a>
-                <a href = "/">Current orders</a>
+                <a href = "/current">Current orders</a>
                 <a href ="/">Sign out</a> 
             </div>
             </div>
-            <h2>Set a temperature:</h2>
-            <h2>Set a timer: {{ t</h2>
+            <div class = "previous">
+            <h3><b>All previous orders:</b></h3>
+        </div>
+        <div class = "orders">
+        <b>
+        <p>Unique order number: {{ ordernumber }}</p><br/><br/>
+        <p>Pizza pepperoni: {{ pp }}</p><br/><br/>
+        <p>Pizza cheese: {{ pc }}</p><br/><br/>
+        <p>Pizza veggie: {{ pv }}</p><br/><br/>
+        <p>Pizza meat: {{ pma }}</p><br/><br/></b>
+        </div>
+
     </body>
 </html>

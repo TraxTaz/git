@@ -1,0 +1,29 @@
+.previous{
+    font-size: 200%;
+    font-family: 'Italic';
+    color: blue;
+    position: relative;
+    left: 40px;
+}
+body{
+    overflow: hidden;
+}
+.set{
+    font-size: 150%;
+    font-family: 'Italic'
+}
+.form-input, .form-input2{
+    width:2%;
+    position: relative;
+    left: 200px;
+}
+
+.form-input2{
+    top: 20px;
+}
+.orders{
+    color: blueviolet;
+    font-size: 110%;
+    font-family: 'Italic';
+    position: fixed;
+}
