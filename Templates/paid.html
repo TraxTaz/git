@@ -1,12 +1,39 @@
 <html>
     <head>
+        <meta name = "main-page" contect = "Home page">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+        <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/style.css') }}">
+        <title>Mario and Luigi's Pizzareia</title>
+    </head>
+    <body>
+        <div class = "topnav">
+        <div class = "img">
+            <img src = "{{url_for('static', filename='mario.png')}}">
+        </div>
+        <div class = "text">
+            <a href ="/mainn">Main</a>
+            <a href ="/out2">Location</a>
+            <a href ="/out">About us</a>
+            <a href ="/menu">Menu</a>
+            <a href ="language.html">Dutch</a>
+            <a href ="/">Sign out</a> 
+        </div>
+        </div>
+
+        <div class = "PaidTable">
         <title>Paid</title>
         <link rel="stylesheet" type="text/css" href="static/style.css">
     </head>
     <body>
-        <h1>You paid! your order will be soon ready</h1>
-        <h2>your order number is:{{ordernumber}}</h2>
-        <P>Total Price is: €{{total}}</P>
-        <P>{{button}}</P>
+        <p> <table bgcolor="white" style="margin:auto;text-align:center">
+            <tr style="text-align:center" ><th>
+          <ul style="font-size:25px;text-align:center">
+        <br><span><big></big></span><br>
+         <br><span><big>You paid! your order will be ready in: {{time}}</big></span><br>
+         <br><span><big>your order number is:{{ordernumber}}</big></span><br>
+         <br><span><big></big></span><br>
+          </tr>
+          </table>
+        </div>
     </body>
 </html>

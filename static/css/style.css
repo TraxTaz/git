@@ -1,7 +1,7 @@
 .topnav, .topnav2, .topnav3, .topnav4, .topnav5{
     overflow: hidden;
     padding: 18px 36px;
-    
+    white-space: nowrap;
 }
 .topnav, .topnav2{
     background-color: #EE4400;
@@ -21,24 +21,35 @@
     justify-content: center;
 }
 .topnav a{
-    padding-right: 145px;
+    padding-right: 80px;
 }
 .topnav2 a{
     padding-right: 55px;
 }
 .topnav3 a{
-    padding-right: 190px;
+    padding-right: 80px;
 }
 .topnav4 a{
-    padding-right: 145px;
+    padding-right: 80px;
 }
 .topnav5 a{
-    padding-right: 145px;
+    padding-right: 80px;
+}
+@media screen and (max-width: 1000px) {
+    .topnav4{
+        display: block;
+    }
+    .topnav4 a{
+        display: block;
+    }
 }
 body{
-    background-image: url('/static/view-leaning-tower-pisa-background-blue-sky_274719-6850.png') ;
+    background: url('/static/view-leaning-tower-pisa-background-blue-sky_274719-6850.png') no-repeat center fixed;
     background-size: cover;
-    margin: 0px;
+    margin: auto;
+    overflow: hidden;
+
+    
 }
 .text{
     font-size: 250%;
@@ -67,13 +78,33 @@ body{
 }
 .pizza{
     position: relative;
-    left: 130px;
+    left: 50px;
     top: 70px;
 }
 .pizza1{
     position: relative;
-    left: 130px;
+    left: 50px;
     top: 170;
+}
+.pizza2{ 
+    position:relative;
+    left: 580px;
+    bottom: 755px;
+}
+.pizza3{
+    position: relative;
+    bottom:848px;
+    left: 620px;
+}
+.pizza4{
+       position: relative;
+       bottom: 1590px;
+       left: 1130px;    
+}
+.pizza5{
+        position: relative;
+        bottom: 1690px;
+        left: 1130px;
 }
 .h, .h2{
     color: #EE4400;
@@ -92,6 +123,13 @@ body{
     top: 100px;
     left: 200px;
 }
+.hluigi{
+    font-size: 190%;
+    color: purple;
+    position: relative;
+    top: 100px;
+    left: 200px;
+}
 .p{
     font-size: 500%;
     font-family: 'Inter';
@@ -106,7 +144,7 @@ body{
     font-size: 150%;
     font-family: 'inter';
     position: relative;
-    top: 100px;
+    top: 40px;
     left: 15px;
 }
 .p2{
@@ -117,20 +155,44 @@ body{
     top: 130px;
     left: 30px;
 }
-.p3, .p4{
+.p3, .p4,.pm{
     font-size: 16px;
     font-family: 'Italic';
     color: #3E3A3A transparent;
     position: relative;
-    bottom: 140px;
-    left: 333px;
+    bottom: 139px;
+    left: 260px;
 }
 .p4{
     position: relative;
     bottom: 210px;
-    left: 333px;
+    left: 280px;
 }
-.pmario{
+
+.pm{
+    position: relative;
+    bottom: 980px;
+    left: 790px;
+
+}
+.pp{
+    position: relative;
+    bottom: 1060px;
+    left: 830px;
+}
+
+.pc{
+    position: relative;
+    bottom: 1819px;
+    left: 1350px;
+}
+
+.pv{
+    position: relative;
+    bottom: 1908px;
+    left: 1350px;
+}
+.pmario, .pluigi{
     font-size: 120%;
     position: relative;
     left: 80px;
@@ -207,4 +269,25 @@ span{
     position: relative;
     left: 160px;
     bottom: 28px;
+}
+.line{
+    position: relative;
+    top: 10px;
+}
+.buttoncart{
+    position: relative;
+    align-items: center;
+    position: relative;
+    top: 10px;
+    right: 450px;
+}
+.PaidTable{
+    border: 1px solid orange;
+    border-radius: 10px;
+    -webkit-text-stroke: 0,5px black;
+    background-color: rgba(0,0,0,.3); 
+    color: #fff;
+    position: relative;
+    bottom: 250px; 
+    margin: 400px;    
 }

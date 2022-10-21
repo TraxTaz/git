@@ -1,58 +1,79 @@
 <html>
     <head>
         <title>Cart</title>
-        <link rel="stylesheet" type="text/css" href="static/style.css">
+        <meta name = "main-page" contect = "Home page">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+        <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/style.css') }}">
+        <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/style2.css') }}">
     </head>
-    <body>
-        <h1>inside of you cart is:</h1>
-        <h2>You orderd: </h2>
+    <body scroll = "no">
+        <div class = "topnav4">
+            <div class = "img">
+                <img src = "{{url_for('static', filename='luigi_NSMBUDX.png')}}">
+            </div>
+            <div class = "text">
+                <a href ="/mainn">Main</a>
+                <a href ="/out2">Location</a>
+                <a href ="/out">About us</a>
+                <a href ="/menu">Menu</a>
+                <a href ="language.html">Dutch</a>
+                <a href ="/">Sign out</a> 
+            </div>
+            </div>
+
+
+        <h1>Your cart has:</h1>
+        <h2>Your order: </h2>
 
         {% if pp == 0 %}
         <p></p>
         {% else %}
-        <br>{{ pp }} Margherita
-        <img style="width:100px; height:100px" src="{{url_for('static', filename='pizzamargherita.jpg')}}">
-        <p>Price: €7.99{{totalpp}}</p>
+        <br>            {{ pp }} Pizza Pepperoni
+        <img style="width:200px; height:200px" src="{{url_for('static', filename='pizzapepperoni.png')}}">
+        <p>Price:€8.99</p>
         {% endif %}
         {% if pc == 0 %}
         <p></p>
         {% else %}
-        <br>{{ pc }} Napolitana
-        <img style="width:100px; height:100px" src="{{url_for('static', filename='napolitan.jpg')}}">
-        <p>Price: €8.99{{totalpc}} </p>
+        <br>     {{ pc }} Pizza cheese
+        <img style="width:200px; height:200px" src="{{url_for('static', filename='pizzac.png')}}">
+        <p>Price: €6.99 </p>
         {% endif %}
         {% if pv == 0 %}
         <p></p>
         {% else %}
         <br>            {{ pv }} Pizza Veggie
-        <img style="width:100px; height: 100 px" src="https://images.newyorkpizza.nl/Products/Original/vegan_Californian-8071.png">
-        <p>Price: €{{totalpv}} </p>
+        <img style="width:100px; height: 100 px" src="{{url_for('static', filename='pizzaveggie.png')}}">
+        <p>Price: €7.99 </p>
         {% endif %}
         {% if pm == 0 %}
         <p></p>
         {% else %}
         <br>            {{ pm }} Pizza Meat
-        <img style="width:100px; height: 100 px" src="https://images.newyorkpizza.nl/Products/Original/BBQ_meatlovers-8053.png">
-        <p>Price: €{{totalpm}} </p>
+        <img style="width:200px; height: 200 px" src="{{url_for('static', filename='goodpizzameat.png')}}">
+        <p>Price: €9.99 </p>
         {% endif %}
         {% if pma == 0 %}
         <p></p>
         {% else %}
-        <br>            {{ pma }} Pizza Margherita
-        <img style="width:100px; height: 100 px" src="https://images.newyorkpizza.nl/Products/Original/Margherita-8046.png">
-        <p>Price: €{{totalpma}} </p>
+        <br>            {{ pma }} Pizza Napolitana
+        <img style="width:200px; height: 200 px" src="{{url_for('static', filename='napolitan.jpg')}}">
+        <p>Price: €8.99 </p>
         {% endif %}
         {% if pbbq == 0 %}
         <p></p>
         {% else %}
-        <br>            {{ pbbq }} Pizza pbbq
-        <img style="width:100px; height: 100 px" src="https://images.newyorkpizza.nl/Products/Original/BBQ_Chicken-8066.png">
-        <p>Price: €{{totalpbbq}} </p>
+        <br>            {{ pbbq }} Pizza Margherita
+        <img style="width:200px; height: 200px" src="{{url_for('static', filename='pizzamargherita.jpg')}}">
+        <p>Price: €8.99 </p>
         {% endif %}
         <p></p>
         <P>Total Price is: €{{total}}</P>
-
-        <button onclick="location.href='buy';"class="button" >Go Back</button>
-        <button onclick="location.href='paid';"class="button" >Pay</button>
+        <a href = "/menu">
+            <button class = "button3 back">Back</button>
+        </a>
+        <a href = "/paid">
+            <button class = "button2 pay">Pay</button>
+        </a>
     </body>
 </html>

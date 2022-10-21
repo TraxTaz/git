@@ -21,16 +21,18 @@ with open('login.csv', 'r') as filevar:
         user_names.append(row[0])
         user_passwords.append(row[1])
 
-with open('Sold.csv', 'r', newline="") as filevar:
+    with open('Sold.csv', 'r', newline="") as filevar:
      reader = csv.reader(filevar)
      for row in reader:
-        pp.append(float(row[0]))
-        pc.append(float(row[1]))
-        pv.append(float(row[2]))
-        pm.append(float(row[3]))
-        pma.append(float(row[4]))
-        pbbq.append(float(row[5]))
-        ordernumber.append(float(row[6]))
+        pp.append(int(row[0]))
+        pc.append(int(row[1]))
+        pv.append(int(row[2]))
+        pm.append(int(row[3]))
+        pma.append(int(row[4]))
+        pbbq.append(int(row[5]))
+        ordernumber.append(int(row[6]))
+
+
 
 app = Flask(__name__)
 app.secret_key = b'balls'
@@ -109,7 +111,7 @@ def mains():
 
 @app.route('/orderhistory')
 def ohistory():
-    return render_template('orderhistory.html', ordernumber = ordernumber, pp = pp, pc = pc, pv = pv, pma = pma)
+    return render_template('orderhistory.html', Ordernumbers = ordernumber, pps = pp, pcs = pc, pvs = pv, pma = pma, pm = pm, pbbq = pbbq)
 
 @app.route('/ovenstatus')
 def ovenstatus():
@@ -130,6 +132,10 @@ def homepage():
 @app.route('/userlogin')
 def init():
     return render_template('login.html')
+
+@app.route('/menulog')
+def menulog():
+    return render_template("menulog.html")
 
 #--------------------arduino data------------------------
 @app.route('/test', methods = ["POST"])
@@ -184,12 +190,13 @@ def bought():
                         pma = int(pma[-1]),
                         pbbq = int(pbbq[-1]),
                         ordernumber = int(ordernumber[-1]),
-                        total = (pp[-1] * 7.99) + (pc[-1] * 8.99) + (pv[-1] * 8) + (pm[-1] * 8) + (pma[-1] * 8) + (pbbq[-1] * 8)
+                        total = (pp[-1] * 8.99) + (pc[-1] * 6.99) + (pv[-1] * 7.99) + (pm[-1] * 9.99) + (pma[-1] * 7.99) + (pbbq[-1] * 8.99)
                         )
    
 @app.route("/paid")
 def paid():
+
     return render_template('paid.html',
     ordernumber = int(ordernumber[-1]),
-    total = (pp[-1] * 7.99) + (pc[-1] * 8.99) + (pv[-1] * 8) + (pm[-1] * 8) + (pma[-1] * 8) + (pbbq[-1] * 8)
+    total = (pp[-1] * 8.99) + (pc[-1] * 6.99) + (pv[-1] * 7.99) + (pm[-1] * 9.99) + (pma[-1] * 7.99) + (pbbq[-1] * 8.99)
 )

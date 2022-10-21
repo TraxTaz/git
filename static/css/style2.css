@@ -14,8 +14,6 @@ body{
 }
 .form-input, .form-input2{
     width:2%;
-    position: relative;
-    left: 200px;
 }
 
 .form-input2{
@@ -26,4 +24,87 @@ body{
     font-size: 110%;
     font-family: 'Italic';
     position: fixed;
+    left: 40px;
+}
+.all{
+    position: relative;
+    bottom: 50px;
+}
+.button{
+    background-color: #22B24C;
+    border: none;
+    color: white;
+    padding: 8px 42px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.back, .back1, .cart{
+    background-color: rgb(240, 235, 235);
+    color: #22B24C;
+    border: 2px solid #22B24C;
+}
+.back:hover, .back1:hover, .cart:hover{
+    background-color: #EE4400;
+}
+.back1:hover{
+    background-color: #EE4400;
+}
+.back1{
+    position: relative;
+    left: 160px;
+    bottom: 28px;
+}
+.button2{
+    background-color: #22B24C;
+    border: none;
+    color: white;
+    padding: 12px 65px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.pay{
+    background-color: #ffffff;
+    color:#22B24C;
+    border: 2px solid #22B24C;
+    position: fixed;
+    left: 830px;
+    bottom: 120px;
+ 
+}
+.pay:hover{
+    background-color: #EE4400;
+}
+.button3{
+    background-color: #22B24C;
+    border: none;
+    color: white;
+    padding: 8px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.back{
+    background-color: #ffffff;
+    color:#22B24C;
+    border: 2px solid #22B24C;
+    position: fixed;
+    left: 690px;
+    bottom: 50px;
+}
+.back:hover{
+    background-color: #EE4400;
 }

@@ -7,60 +7,101 @@
         <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/style2.css') }}">
         <title>Mario and Luigi's Pizzareia</title>
     </head>
-    <body>
+    <body scroll = "no">
         <div class = "topnav4">
             <div class = "img">
                 <img src = "{{url_for('static', filename='luigi_NSMBUDX.png')}}">
             </div>
             <div class = "text">
                 <a href ="/">Main</a>
-                <a href ="/out2">Location</a>
-                <a href ="/out">About us</a>
+                <a href ="/location">Location</a>
+                <a href ="/aboutus">About us</a>
                 <a href ="/menu">Menu</a>
                 <a href ="language.html">Dutch</a>
-                <a href ="/userlogin">login</a> 
+                <a href ="/userlogin">Login</a> 
             </div>
             </div>
-            
             <form action="/bought" method="POST" >
+            <div class = "all">
             <div class = "pizza">
                 <img src = "{{url_for('static', filename='pizzamargherita.jpg')}}" width = "200" height = "200">
             </div>
-            
             <div class = "p3">
-                <h2>Margherita</h2>
-                <p><big><i>sauce, mozzarella and basil</i></big></p>
-                <p><big>7.99€</big></p>
-                <p><b><input class="form-input2" type="text" name="PP" placeholder="" value=0 required></b></p>
+            <h2>Margherita</h2>
+            <p><big><i>sauce, mozzarella and basil</i></big></p>
+            <p><big>8.99€</big></p>
+            <p><b><input class="form-input" type="text" name="PBBQ" placeholder="" value=0 required></b> </p>
             -------------------------------------------------- 
         </div>
         <div class = "pizza1">
-            <img src = "{{url_for('static', filename='napolitan.jpg')}}"width = "200" height = "200">
+        <img src = "{{url_for('static', filename='napolitan.jpg')}}"width = "200" height = "200">
     </div>
     <div class = "p4">
-        <h2>Napolitana</h2>
-        <p><big><i> raw tomatoes, fresh mozzarella cheese<br/>
-            fresh basil, and olive oil.</i></big></p>
+    <h2>Napolitana</h2>
+    <p><big><i> raw tomatoes, fresh mozzarella cheese<br/>
+        fresh basil, and olive oil.</i></big></p>
         <p><big>8.99€</big></p>
-        <b><input class="form-input" type="text" name="PC" placeholder="" value="0" required></b><br/>
-        ------------------------------------------------------<br/>
-        <button class="btn-submit">go to cart</button>
+        <p><b><input class="form-input" type="text" name="PMA" placeholder="" value=0 required></b> </p>
+       
+        ------------------------------------------------------
     </div>
-    <p>
-        <b><input class="form-input" type="text" name="PV" placeholder="" value="0" required></b>
-        </p>
-    
-        <p>
-        <b><input class="form-input" type="text" name="PM" placeholder="" value="0" required></b>
-        </p>
-    
-        <p>
-        <b><input class="form-input" type="text" name="PMA" placeholder="" value="0" required></b>
-        </p>
-    
-        <p>
-        <b><input class="form-input" type="text" name="PBBQ" placeholder="" value="0" required></b>
-        </p>
-</form>
+   
+    <div class = "pizza2">
+    <img src = "{{url_for('static', filename='goodpizzameat.png')}}" width="200" height="200">
+    </div>
+    <div class = "pm">
+    <h2>Meat</h2>
+    <p><big><i>   crumbled Italian sausage or ground beef<br/>
+         bacon, pepperoni, and  sliced ham
+         </i></big></p>
+    <p><big>9.99€</big></p>
+    <p><b><input class="form-input" type="text" name="PM" placeholder="" value=0 required></b> </p>
+    ------------------------------------------------------
+    </div>
+
+    <div class = "pizza3">
+        <img src = "{{url_for('static', filename='pizzapepperoni.png')}}" width="200" height="200">
+        </div>
+        <div class = "pp">
+        <h2>Pepperoni</h2>
+        <p><big><i>sauce, mozzarella, and pepperoni</p>
+             </i></big>
+        <p><big>8.99€</big></p>
+        <p><b><input class="form-input" type="text" name="PP" placeholder="" value=0 required></b> </p>
+        <div class="line">
+        ------------------------------------------------------
+        </div>
+        </div>
+        
+        <div class = "pizza4">
+            <img src = "{{url_for('static', filename='pizzac.png')}}" width="200" height="200">
+            </div>
+            <div class = "pc">
+            <h2>Extra Cheese</h2>
+            <p><big><i>sauce, Extra cheese</p>
+                 </i></big>
+            <p><big>6.99€</big></p><br/>
+            <p><b><input class="form-input" type="text" name="PC" placeholder="" value=0 required></b> </p>
+            ------------------------------------------------------
+            </div>
+            <div class = "pizza5">
+                <img src = "{{url_for('static', filename='pizzaveggie.png')}}" width="200" height="200">
+                </div>
+                <div class = "pv">
+                <h2>Veggie</h2>
+                <p><big><i>roasted red peppers, baby spinach, onions<br/>
+                    mushrooms, tomatoes, and black olives </i></big>
+                <p><big>7.99€</big></p>
+                <p><b><input class="form-input" type="text" name="PV" placeholder="" value=0 required></b> </p>
+                ------------------------------------------------------
+            </form>
+                <div class = "buttoncart">
+                    <a href = "/">
+                        <button class = "button cart">Cart</button>
+                    </a>
+            </div>
+            </div>
+        </div>
+
     </body>
 </hmtl>
