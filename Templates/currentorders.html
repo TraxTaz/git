@@ -4,6 +4,8 @@
         <meta name = "main-page" contect = "Home page">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
         <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/style.css') }}">
+        <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/style2.css') }}">
+        <meta http-equiv="refresh" content="2">
         <title>Mario and Luigi's Pizzareia</title>
     </head>
     <body>
@@ -14,22 +16,33 @@
             <div class = "text">
                 <a href ="/orderhistory">Order History</a>
                 <a href = "/">Current orders</a>
+                <a href = "/menu3">Menu</a>
                 <a href ="/">Sign out</a> 
             </div>
             </div>
-            <table>
-                <tr>
-                    <th>Unique ordernumber</th>
-                    <th>Pizza</th>
-                    <th>price</th>
-                    <th>status</th>
-                </tr>
-                <tr>
-                    <th>{{currentordernumber}}</th>
-                    <th>{{pizza}}</th>
-                    <th>{{price}}</th>
-                    <th>{{status}}</th>
-                </tr>
-            </table>
+            <div class = "corder">
+                <b>
+            <p>Current orders:</p>
+            <div class = "corders">
+            {% if Pp != 0 %}
+            <p>{{ordernumber}} : {{Pp}} Pepperoni</p>
+            {% endif %}
+            {% if Pc != 0 %}
+            <p>{{ordernumber}} : {{Pc}} Extra cheese</p>
+            {% endif %}
+            {% if Pv != 0 %}
+            <p>{{ordernumber}} : {{Pv}} Veggie</p>
+            {% endif %}
+            {% if Pm != 0 %}
+            <p>{{ordernumber}} : {{Pm}} Meat</p>
+            {% endif %}
+            {% if Pma != 0 %}
+            <p>{{ordernumber}} : {{Pma}} Napolitana</p>
+            {% endif %}
+            {% if Pbbq != 0 %}
+            <p>{{ordernumber}} : {{Pbbq}} Margherita</p></b>
+            {% endif %}
+        </div>
+    </div>
     </body>
 </html>

@@ -48,8 +48,6 @@ body{
     background-size: cover;
     margin: auto;
     overflow: hidden;
-
-    
 }
 .text{
     font-size: 250%;
@@ -221,8 +219,12 @@ body{
     bottom: 250px
 }
 
-span{
+.span{
     font-family: Arial, Helvetica, sans-serif;
+}
+.aligntext{
+    text-align: center;
+    font-size: 25px;
 }
 .loginreg{
     text-align: center;
@@ -290,4 +292,57 @@ span{
     position: relative;
     bottom: 250px; 
     margin: 400px;    
+}
+.countdown{
+    display: flex;
+    font-size: 100px;
+    font-family: 'Italic';
+}
+.timer {
+    font-family: sans-serif;
+    display: inline-block;
+    padding: 24px 32px;
+    border-radius: 30px;
+    background: white;
+}
+  
+.timer__part {
+    font-size: 36px;
+    font-weight: bold;
+}
+  
+.timer__btn {
+    width: 50px;
+    height: 50px;
+    margin-left: 16px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    background: #8208e6;
+    cursor: pointer;
+}
+  
+.timer__btn--start {
+    background: #00b84c;
+}
+  
+.timer__btn--stop {
+    background: #ff0256;
+}
+
+.seperate{
+    font-size: 20px;
+    font-family: 'Italic';
+    position: relative;
+    top: 550px;
+    left: 1200px;
+}
+.right{
+    position: relative;
+    top: 550px;
+    left: 1470px;
+}
+.ordertext{
+    font-family: 'Italic';
+    color: black;
 }

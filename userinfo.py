@@ -1,5 +1,6 @@
-from flask import Flask, render_template, redirect, request, flash
+from flask import Flask, render_template, redirect, request, flash, url_for
 import csv, random
+import re
 from statistics import *
 
 Temp = 0
@@ -7,6 +8,14 @@ Time = 0
 user_names = []
 user_passwords = []
 admins =["mario", "luigi"]
+pizzas = {
+    "Margharita": "tomato sauce, mozzarella and basil",
+    "Napolitana": "raw tomatoes and mozzarella cheese",
+    "Meat": "crumbled Italian sausage or ground beef bacon, pepperoni,and sliced ham",
+    "Pepperoni": "tomato sauce, mozzarella and pepporoni",
+    "Extra cheese": "tomato sauce, Extra cheese",
+    "Veggie": "roasted red peppers, baby spinach, onions, mushrooms, tomatoes and black olives"
+}
 pp = []
 pc = []
 pv =[]
@@ -115,15 +124,24 @@ def ohistory():
 
 @app.route('/ovenstatus')
 def ovenstatus():
-    return render_template('ovenstatus.html', Time = Time, Temp = Temp)
+    return render_template('ovenstatus.html', Temp = Temp, Time = Time, ordernumber = int(ordernumber[-1]),Pp = pp, Pc = pc, Pv = pv, Pm = pm, Pma = pma, Pbbq = pbbq)
 
 @app.route('/current')
 def currentorders():
-    return render_template('currentorders.html  ')
+    return render_template('currentorders.html',ordernumber = int(ordernumber[-1]),
+    total = (pp[-1] * 8.99) + (pc[-1] * 6.99) + (pv[-1] * 7.99) + (pm[-1] * 9.99) + (pma[-1] * 8.99) + (pbbq[-1] * 8.99))
 
 @app.route('/menu')
 def menu():
     return render_template('menu.html')
+
+@app.route('/menu3')
+def menu3():
+    return render_template('menu3.html')
+
+@app.route('/menulogin')    
+def menulogon():
+    return render_template('menu2.html')
 
 @app.route('/')
 def homepage():
@@ -137,6 +155,19 @@ def init():
 def menulog():
     return render_template("menulog.html")
 
+@app.route('/order')
+def order():
+    return render_template("order.html")
+
+@app.route('/orderhistoryluigi')
+def orderhistoryLuigi():
+    return render_template('orderhistoryluigi.html', Ordernumbers = ordernumber, pps = pp, pcs = pc, pvs = pv, pma = pma, pm = pm, pbbq = pbbq)
+
+@app.route('/ordersuccesful')
+def ordersuccesful():
+    return render_template('ordersuccesful.html',
+    ordernumber = int(ordernumber[-1]),
+    total = (pp[-1] * 8.99) + (pc[-1] * 6.99) + (pv[-1] * 7.99) + (pm[-1] * 9.99) + (pma[-1] * 8.99) + (pbbq[-1] * 8.99))
 #--------------------arduino data------------------------
 @app.route('/test', methods = ["POST"])
 def send():
@@ -190,13 +221,28 @@ def bought():
                         pma = int(pma[-1]),
                         pbbq = int(pbbq[-1]),
                         ordernumber = int(ordernumber[-1]),
-                        total = (pp[-1] * 8.99) + (pc[-1] * 6.99) + (pv[-1] * 7.99) + (pm[-1] * 9.99) + (pma[-1] * 7.99) + (pbbq[-1] * 8.99)
-                        )
-   
+                        total = (pp[-1] * 8.99) + (pc[-1] * 6.99) + (pv[-1] * 7.99) + (pm[-1] * 9.99) + (pma[-1] * 8.99) + (pbbq[-1] * 8.99)
+)
 @app.route("/paid")
 def paid():
-
+    pp = []
+    pc = []
+    pv =[]
+    pm =[]
+    pma =[]
+    pbbq =[]
+    ordernumber =[]
+    with open('Sold.csv', 'r', newline="") as filevar:
+     reader = csv.reader(filevar)
+     for row in reader:
+        pp.append(float(row[0]))
+        pc.append(float(row[1]))
+        pv.append(float(row[2]))
+        pm.append(float(row[3]))
+        pma.append(float(row[4]))
+        pbbq.append(float(row[5]))
+        ordernumber.append(float(row[6]))
     return render_template('paid.html',
     ordernumber = int(ordernumber[-1]),
-    total = (pp[-1] * 8.99) + (pc[-1] * 6.99) + (pv[-1] * 7.99) + (pm[-1] * 9.99) + (pma[-1] * 7.99) + (pbbq[-1] * 8.99)
+    total = (pp[-1] * 8.99) + (pc[-1] * 6.99) + (pv[-1] * 7.99) + (pm[-1] * 9.99) + (pma[-1] * 8.99) + (pbbq[-1] * 8.99)
 )

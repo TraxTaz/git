@@ -3,77 +3,91 @@
         <title>Cart</title>
         <meta name = "main-page" contect = "Home page">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
-        <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/style.css') }}">
-        <link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/style2.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css') }}">
     </head>
-    <body scroll = "no">
+    <body>
         <div class = "topnav4">
             <div class = "img">
                 <img src = "{{url_for('static', filename='luigi_NSMBUDX.png')}}">
             </div>
             <div class = "text">
-                <a href ="/mainn">Main</a>
-                <a href ="/out2">Location</a>
-                <a href ="/out">About us</a>
+                <a href ="/">Main</a>
+                <a href ="/location">Location</a>
+                <a href ="/aboutus">About us</a>
                 <a href ="/menu">Menu</a>
-                <a href ="language.html">Dutch</a>
                 <a href ="/">Sign out</a> 
             </div>
             </div>
 
-
-        <h1>Your cart has:</h1>
+        <h1>cart contents:</h1>
         <h2>Your order: </h2>
 
         {% if pp == 0 %}
         <p></p>
         {% else %}
+        <div class ="pizzapep">
         <br>            {{ pp }} Pizza Pepperoni
         <img style="width:200px; height:200px" src="{{url_for('static', filename='pizzapepperoni.png')}}">
-        <p>Price:€8.99</p>
+        <p>Price: €8.99{{totalpp}}</p>
+        </div>
         {% endif %}
         {% if pc == 0 %}
         <p></p>
         {% else %}
+        <div class ="pizzachez">
         <br>     {{ pc }} Pizza cheese
         <img style="width:200px; height:200px" src="{{url_for('static', filename='pizzac.png')}}">
-        <p>Price: €6.99 </p>
+        <p>Price: €6.99{{totalpc}} </p>
+        </div>
         {% endif %}
         {% if pv == 0 %}
         <p></p>
         {% else %}
+        <div class ="pizzaveg">
         <br>            {{ pv }} Pizza Veggie
-        <img style="width:100px; height: 100 px" src="{{url_for('static', filename='pizzaveggie.png')}}">
-        <p>Price: €7.99 </p>
+        <img style="width:200px; height:200px" src="{{url_for('static', filename='pizzaveggie.png')}}">
+        <p>Price: €7.99{{totalpv}} </p>
+        </div>
         {% endif %}
         {% if pm == 0 %}
         <p></p>
         {% else %}
+        <div class ="pizzameat">
         <br>            {{ pm }} Pizza Meat
         <img style="width:200px; height: 200 px" src="{{url_for('static', filename='goodpizzameat.png')}}">
-        <p>Price: €9.99 </p>
+        <p>Price: €9.99{{totalpm}} </p>
+        </div>
         {% endif %}
         {% if pma == 0 %}
         <p></p>
         {% else %}
+        <div class ="pizzamarg">
         <br>            {{ pma }} Pizza Napolitana
-        <img style="width:200px; height: 200 px" src="{{url_for('static', filename='napolitan.jpg')}}">
-        <p>Price: €8.99 </p>
+        <img style="width:200px; height: 200px" src="{{url_for('static', filename='napolitan.jpg')}}">
+        <p>Price: €8.99{{totalpma}} </p>
+        </div>
         {% endif %}
         {% if pbbq == 0 %}
         <p></p>
         {% else %}
-        <br>            {{ pbbq }} Pizza Margherita
-        <img style="width:200px; height: 200px" src="{{url_for('static', filename='pizzamargherita.jpg')}}">
-        <p>Price: €8.99 </p>
+        <div class = "pizzanap">
+        <br>            {{ pbbq}} Pizza Margherita
+        <img style="width:200px; height:200px" src="{{url_for('static', filename='pizzamargherita.jpg')}}">
+        <p>Price: €8.99{{totalpbbq}} </p>
         {% endif %}
         <p></p>
+        </div>
         <P>Total Price is: €{{total}}</P>
         <a href = "/menu">
             <button class = "button3 back">Back</button>
         </a>
+        
+        {% if total == 0 %}
+        <h1></h1>
+        {% else %}
         <a href = "/paid">
             <button class = "button2 pay">Pay</button>
         </a>
+        {% endif %}
     </body>
 </html>

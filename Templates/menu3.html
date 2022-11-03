@@ -8,19 +8,17 @@
         <title>Mario and Luigi's Pizzareia</title>
     </head>
     <body scroll = "no">
-        <div class = "topnav4">
+        <div class = "topnav5">
             <div class = "img">
-                <img src = "{{url_for('static', filename='luigi_NSMBUDX.png')}}">
+                <img src = "{{url_for('static', filename='mario.png')}}">
             </div>
             <div class = "text">
-                <a href ="/">Main</a>
-                <a href ="/location">Location</a>
-                <a href ="/aboutus">About us</a>
-                <a href ="/menu">Menu</a>
-                <a href ="/">Sign out</a> 
+                <a href ="/orderhistory">Order History</a>
+                <a href = "/current">Current orders</a>
+                <a href = "/menu3">Menu</a>
+                <a href = "/">Sign out</a> 
             </div>
             </div>
-            <form action="/bought" method="POST" >
             <div class = "all">
             <div class = "pizza">
                 <img src = "{{url_for('static', filename='pizzamargherita.jpg')}}" width = "200" height = "200">
@@ -93,10 +91,9 @@
                 <p><big>7.99€</big></p>
                 <p><b><input class="form-input" type="text" name="PV" placeholder="" value=0 required></b> </p>
                 ------------------------------------------------------
-            </form>
                 <div class = "buttoncart">
-                    <a href = "/">
-                        <button class = "button cart">Cart</button>
+                    <a href = "/ordersuccesful">
+                        <button class = "button cart">Order</button>
                     </a>
             </div>
             </div>

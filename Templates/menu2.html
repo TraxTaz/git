@@ -17,10 +17,9 @@
                 <a href ="/location">Location</a>
                 <a href ="/aboutus">About us</a>
                 <a href ="/menu">Menu</a>
-                <a href ="/">Sign out</a> 
+                <a href ="/userlogin">Login</a> 
             </div>
             </div>
-            <form action="/bought" method="POST" >
             <div class = "all">
             <div class = "pizza">
                 <img src = "{{url_for('static', filename='pizzamargherita.jpg')}}" width = "200" height = "200">
@@ -93,14 +92,16 @@
                 <p><big>7.99€</big></p>
                 <p><b><input class="form-input" type="text" name="PV" placeholder="" value=0 required></b> </p>
                 ------------------------------------------------------
-            </form>
-                <div class = "buttoncart">
-                    <a href = "/">
-                        <button class = "button cart">Cart</button>
+            <div class = "logincart">
+            <p><b>Login in to see your cart</b></p>
+        </div>
+            <div class = "buttoncart">
+                    <a href = "/userlogin">
+                        <button class = "button cart">Login</button>"
                     </a>
             </div>
-            </div>
         </div>
+
 
     </body>
 </html>

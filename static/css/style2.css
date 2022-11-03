@@ -13,7 +13,7 @@ body{
     font-family: 'Italic'
 }
 .form-input, .form-input2{
-    width:2%;
+    width:3%;
 }
 
 .form-input2{
@@ -107,4 +107,46 @@ body{
 }
 .back:hover{
     background-color: #EE4400;
+}
+.logincart{
+    font-size: 150%;
+    font-family: 'Italic';
+    color: #EE4400;
+    position: relative;
+    right: 475px;
+    top: 30px;
+}
+.corder{
+    font-size: 200%;
+    font-family: 'Italic';
+    color: blue;
+    position: absolute;
+    left: 50px;
+}
+.corders{
+    position: fixed;
+    left: 50px;
+}
+.oval{
+    width: 20%;
+    height: 300px;
+    border-radius: 10px;
+    margin: auto;
+    background-color: purple;
+    box-shadow: 5px 10px;
+    text-align: center;
+    padding-top: 5px;
+    justify-content: center;
+    position: relative;
+    top: 80px;
+    right: 550px;
+}
+.orderss{
+    color: green;
+    font-size: 150%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    position: relative;
+    left: 610px;
+    bottom: 300px;
 }
